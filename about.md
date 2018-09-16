@@ -4,15 +4,10 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+I am a software analyst, architect and developer involved in web based applications, mainly Java Enterprise solutions in the Health, Insurance, Government and Banking domains.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+Test Driven Development (TDD) and software testing methodologies and techniques are my main interests, without forgetting about coding and code quality.
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+Complete profile at[ http://www.linkedin.com/in/gualtierotesta](http://www.linkedin.com/in/gualtierotesta)
 
-
-[jekyll-organization]: https://github.com/jekyll
+I work and live close to Milan, Italy.
