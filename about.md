@@ -8,6 +8,17 @@ I am a software analyst, architect and developer involved in web based applicati
 
 Test Driven Development (TDD) and software testing methodologies and techniques are my main interests, without forgetting about coding and code quality.
 
-Complete profile at[ http://www.linkedin.com/in/gualtierotesta](http://www.linkedin.com/in/gualtierotesta)
-
 I work and live close to Milan, Italy.
+
+# My books
+
+# My technical revisions
+
+# Links
+
+[LinkedIn profile](http://www.linkedin.com/in/gualtierotesta)
+
+[Codewars](https://www.codewars.com/users/gualty) 
+![badge](https://www.codewars.com/users/gualty/badges/micro)
+
+[Book reviews on GoodReads](https://www.goodreads.com/review/list/26059740-gualtiero?order=d&sort=review&view=reviews)

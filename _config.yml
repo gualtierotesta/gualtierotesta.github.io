@@ -13,9 +13,12 @@ theme: minima
 plugins:
   - jekyll-feed
 
+
 # Site settings
+author: Gualtiero Testa
 title: Gualtiero Testa personal blog
 email: gualtiero.testa@gmail.com
 description: "The Art of Coding: experiences from software development world"
 twitter_username: gualtierotesta
 github_username:  gualtierotesta
+codewars_username: gualty
