@@ -3,7 +3,8 @@
 lsi: false
 markdown: kramdown
 highlighter: rouge
-permalink: /:title
+##permalink: /:title
+permalink: /:categories/:title/
 category_dir: topics
 category_title_prefix:
 exclude: ["lib", "blog.rb", "Capfile", "config", "log", "Rakefile", "tmp"]

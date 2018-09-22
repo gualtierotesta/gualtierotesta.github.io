@@ -7,7 +7,7 @@ slug: review-learning-ibm-bluemix
 title: 'Review: Learning IBM Bluemix'
 wordpress_id: 687
 categories:
-- Book review
+- book-review
 tags:
 - bluemix
 - book review

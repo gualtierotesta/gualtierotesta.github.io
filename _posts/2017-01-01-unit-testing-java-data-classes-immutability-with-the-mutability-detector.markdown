@@ -7,8 +7,6 @@ slug: unit-testing-java-data-classes-immutability-with-the-mutability-detector
 title: Unit testing Java data classes immutability with the Mutability Detector
 wordpress_id: 673
 categories:
-- Java
-- Maven
 - test
 tags:
 - code checks
@@ -103,10 +101,9 @@ public class ImmutableBeanTest {
 
 the test will fail if the class is not immutable.
 
-For example, if a field is not final and it has a setter method, the test fails and the error message 
-is very descriptive:
+For example, if a field is not final and it has a setter method, the test fails and the error message is very descriptive:
 
-``` 
+``` text
 org.mutabilitydetector.unittesting.MutabilityAssertionError: 
 Expected: it.gualtierotesta.testsolutions.general.beans.ImmutableBean to be IMMUTABLE
     but: it.gualtierotesta.testsolutions.general.beans.ImmutableBean is actually NOT_IMMUTABLE

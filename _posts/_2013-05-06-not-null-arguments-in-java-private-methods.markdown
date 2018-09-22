@@ -3,10 +3,8 @@ author: gualtierotesta
 comments: true
 date: 2013-05-06 19:00:55+00:00
 layout: post
-link: https://gualtierotesta.wordpress.com/2013/05/06/not-null-arguments-in-java-private-methods/
 slug: not-null-arguments-in-java-private-methods
 title: Not null arguments in Java private methods
-wordpress_id: 33
 categories:
 - IntelliJ
 - Java
@@ -19,7 +17,7 @@ tags:
 - null analysis
 ---
 
-After the article on[ not null arguments on public methods](http://gualtierotesta.wordpress.com/2013/04/30/not-null-arguments-in-java-public-methods/), let's talk about class **private** methods.
+After the article on [not null arguments on public methods]({% post_url 2013-04-30-not-null-arguments-in-java-public-methods %}), let's talk about class **private** methods.
 
 Checking the public method arguments is necessary to guarantee that methods callers are respecting the class API contract.
 
@@ -38,16 +36,22 @@ Joshua Bloch, in his famous Effective Java book, suggest to check private method
 This is correct approach because assertion are usually enabled during development and test, while we are debugging our code, and disabled in production code.
 
 Let me make small example:
-[code language="java"]
+
+``` java
 private void metSimple(final String arg) {
     System.out.println(arg.length());
 }
 ```
-The String argument _arg_ of this method cannot be null. Best approach is to check the argument at the begin of the method body:
-[code language="java"]private void metChecked(final String arg) {
+
+The String argument `arg` of this method cannot be null. Best approach is to check the argument at the begin of the method body:
+
+``` java
+private void metChecked(final String arg) {
     assert arg != null;
     System.out.println(arg.length());
-}```
+}
+```
+
 During the devolpment of the class (with assertions enabled) which uses the method, the assert will check nullity of the argument. Assertion error will help us to debug and improve our code.
 
 To have better support from the IDE, we can also use Nonnull annotation (see [this ](http://gualtierotesta.wordpress.com/2013/04/30/not-null-arguments-in-java-public-methods/)article for more details) like as follows:

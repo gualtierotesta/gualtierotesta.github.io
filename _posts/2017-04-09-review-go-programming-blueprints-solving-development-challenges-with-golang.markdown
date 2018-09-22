@@ -7,8 +7,7 @@ slug: review-go-programming-blueprints-solving-development-challenges-with-golan
 title: 'Review: Go Programming Blueprints - Solving Development Challenges with Golang'
 wordpress_id: 689
 categories:
-- Book review
-- GO
+- book-review
 tags:
 - book review
 - golang

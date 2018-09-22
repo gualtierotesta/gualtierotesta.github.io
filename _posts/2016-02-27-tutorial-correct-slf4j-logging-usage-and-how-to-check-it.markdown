@@ -3,14 +3,10 @@ author: gualtierotesta
 comments: true
 date: 2016-02-27 19:00:01+00:00
 layout: post
-link: https://gualtierotesta.wordpress.com/2016/02/27/tutorial-correct-slf4j-logging-usage-and-how-to-check-it/
 slug: tutorial-correct-slf4j-logging-usage-and-how-to-check-it
 title: 'Tutorial: Correct SLF4J logging usage and how to check it'
-wordpress_id: 492
 categories:
-- FindBugs
-- Java
-- tutorial
+- java
 tags:
 - coding
 - exception
@@ -23,7 +19,9 @@ tags:
 - slf4j
 ---
 
-_SLF4J_ is a very popular logging facade but, like all libraries we use, there is a chance that we use it in a wrong or at least in a not optimal way.
+*Last update: 22 Set 2018*
+
+[SLF4J](https://www.slf4j.org/) is a very popular logging facade but, like all libraries we use, there is a chance that we use it in a wrong or at least in a not optimal way.
 
 In this tutorial we will list common logging errors and how we can detect them using FindBugs. We will also mention PMD and Sonar Squid checks when relevant.
 
@@ -35,33 +33,21 @@ The second plugin is the popular [FB Contrib](http://fb-contrib.sourceforge.net/
 
 For how to use FindBugs plugins, please refer to the following posts:
 
-
-
-
-    
-  * [Maven](https://gualtierotesta.wordpress.com/2015/06/14/tutorial-using-findbugs-with-maven/)
-
-    
-  * [NetBeans](https://gualtierotesta.wordpress.com/2015/06/07/findbugs-plugins/)
-
-
+* [Using FindBugs with Maven](https://gualtierotesta.wordpress.com/2015/06/14/tutorial-using-findbugs-with-maven/)
+* [NetBeans FindBugs plugin](https://gualtierotesta.wordpress.com/2015/06/07/findbugs-plugins/)
 
 Note: in all examples we will assume the following imports:
 
-[code lang=java]
+```java
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 ```
 
-
-
-### 1. Logger definition
-
-
+# 1. Logger definition
 
 Wrong way:
 
-[code lang=java]
+```java
 W1a. Logger log = LoggerFactory.getLogger(MyClass.class);
 W1b. private Logger logger = LoggerFactory.getLogger(MyClass.class);
 W1c. static Logger LOGGER = LoggerFactory.getLogger(AnotherClass.class);
@@ -69,7 +55,7 @@ W1c. static Logger LOGGER = LoggerFactory.getLogger(AnotherClass.class);
 
 Correct way:
 
-[code lang=java]
+```java
 C1a. private static final Logger LOGGER = LoggerFactory.getLogger(MyClass.class);
 C1b. private final Logger logger = LoggerFactory.getLogger(getClass());
 ```
@@ -80,66 +66,36 @@ On the contrary there is no general agreement if the logger should be static or 
 
 Additional info:
 
-
-
-
-    
-  * [SLF4J FAQ](http://slf4j.org/faq.html#declared_static)
-
-    
-  * [Apache Commons Static Log](http://wiki.apache.org/commons/Logging/StaticLog).
-
-
+* [SLF4J FAQ](http://slf4j.org/faq.html#declared_static)
+* [Apache Commons Static Log](http://wiki.apache.org/commons/Logging/StaticLog).
 
 Please note that
 
+* in the static version (C1a), the logger name is usually in uppercase characters as all constant fields. If not, PMD will report a “VariableNamingConventions” violation.
 
-    
-  * in the static version (C1a), the logger name is usually in uppercase characters as all constant fields. If not, PMD will report a “VariableNamingConventions” violation.
+* in both cases, the suggested name is “logger/LOGGER” and not “log/LOG” because some naming conventions avoid too short names (less than four characters). Moreover log is the verb, more suited for a method name.
 
-    
-  * in both cases, the suggested name is “logger/LOGGER” and not “log/LOG” because some naming conventions avoid too short names (less than four characters). Moreover log is the verb, more suited for a method name.
-
-    
-  * the W1c is wrong because we are referring to a class (AnotherClass) which is not the class where the logger is defined. In the 99% of the cases, this is due to a copy & paste from one class to another.
-
-
+* the W1c is wrong because we are referring to a class (AnotherClass) which is not the class where the logger is defined. In the 99% of the cases, this is due to a copy & paste from one class to another.
 
 Related FindBugs (SLF4J plugin) checks:
 
+* SLF4J_LOGGER_SHOULD_BE_PRIVATE
+* SLF4J_LOGGER_SHOULD_BE_NON_STATIC
+* SLF4J_LOGGER_SHOULD_BE_FINAL
+* SLF4J_ILLEGAL_PASSED_CLASS
 
-    
-  * SLF4J_LOGGER_SHOULD_BE_PRIVATE
-
-    
-  * SLF4J_LOGGER_SHOULD_BE_NON_STATIC
-
-    
-  * SLF4J_LOGGER_SHOULD_BE_FINAL
-
-    
-  * SLF4J_ILLEGAL_PASSED_CLASS
-
-
-
-
-
-
-
-### 2. Format string
-
-
+# 2. Format string
 
 Wrong way:
 
-[code lang=java]
+```java
 W2a. LOGGER.info("Obj=" + myObj);
 W2b. LOGGER.info(String.format(“Obj=%s”, myObj));
 ```
 
 Correct way:
 
-[code lang=java]
+```java
 C2. LOGGER.info("Obj={}",myObj);
 ```
 
@@ -149,41 +105,18 @@ Motivation is simple: we should delay logging message creation **after** the log
 
 Related FindBugs (SLF4J plugin) checks:
 
-
-
-
-
-  * SLF4J_FORMAT_SHOULD_BE_CONST Format should be constant
-
-
-  * SLF4J_SIGN_ONLY_FORMAT Format string should not contain placeholders only
-
-
-
-
-
+* SLF4J_FORMAT_SHOULD_BE_CONST Format should be constant
+* SLF4J_SIGN_ONLY_FORMAT Format string should not contain placeholders only
 
 Related FindBugs (FB Contrib plugin) checks:
 
+* LO_APPENDED_STRING_IN_FORMAT_STRING Method passes a concatenated string to SLF4J's format string
 
-
-
-
-  * LO_APPENDED_STRING_IN_FORMAT_STRING Method passes a concatenated string to SLF4J's format string
-
-
-
-
-
-
-
-### 3. Placeholder arguments
-
-
+# 3. Placeholder arguments
 
 Wrong way:
 
-[code lang=java]
+```java
 W3a. LOGGER.info("Obj={}",myObj.getSomeBigField());
 W3b. LOGGER.info("Obj={}",myObj.toString());
 W3c. LOGGER.info("Obj={}",myObj, anotherObj);
@@ -192,7 +125,7 @@ W3d. LOGGER.info("Obj={} another={}",myObj);
 
 Correct way:
 
-[code lang=java]
+```java
 C3a. LOGGER.info("Obj={}",myObj);
 C3b. LOGGER.info("Obj={}",myObj.log());
 ```
@@ -205,24 +138,24 @@ Solution C3b could be somehow misleading because it includes a method invocation
 
 For example, let's consider the following class:
 
-[code lang=java]
+```java
 public class Person {
-private String id;
-private String name;
-private String fullName;
-private Date birthDate;
-private Object address;
-private Map<String, String> attributes;
-private List phoneNumbers;
+    private String id;
+    private String name;
+    private String fullName;
+    private Date birthDate;
+    private Object address;
+    private Map<String, String> attributes;
+    private List phoneNumbers;
 ```
 
 its toString() method will most probably include all fields. Using the solution C3a, all their values will be printed in the log file.
 
 If you do not need all this data, it is useful to define a **helper** method like the following:
 
-[code lang=java]
+```java
 public String log() {
-return String.format("Person: id=%s name=%s", this.id, this.name);
+    return String.format("Person: id=%s name=%s", this.id, this.name);
 }
 ```
 
@@ -234,27 +167,15 @@ For no reason, passwords fields and/or sensitive info (phone numbers,...) should
 
 Related FindBugs (SLF4J plugin) checks:
 
+* SLF4J_PLACE_HOLDER_MISMATCH
 
-
-
-    
-  * SLF4J_PLACE_HOLDER_MISMATCH
-
-
-
-
-
-
-
-### 4. Debug messages
-
-
+# 4. Debug messages
 
 IMPORTANT: rule #4 (see [5 rules article](https://gualtierotesta.wordpress.com/2015/11/29/the-5-java-logging-rules/)) guide us to use a guarded debug logging
 
-[code lang=java]
+```java
 if (LOGGER.isDebugEnabled()) {
-LOGGER.debug(“Obj={}”, myObj);
+    LOGGER.debug(“Obj={}”, myObj);
 }
 ```
 
@@ -262,45 +183,32 @@ Using SLF4J, if the placeholder argument is an object reference (see solutions C
 
 So it is safe to use the following:
 
-[code lang=java]
+```java
 LOGGER.debug(“Obj={}”, myObj);
 ```
 
-
-
-
-
-### 5. Exceptions
-
-
+# 5. Exceptions
 
 Proper exceptions logging is an important support for problems analysis but it is easy to neglect its usefulness.
 
 Wrong way:
 
-[code lang=java]
-W5a. catch (SomeException ex) { LOGGER.error(ex);}..
-W5b. catch (SomeException ex) { LOGGER.error("Error:" + ex.getMessage());}..
+```java
+W5a. catch (SomeException ex) { LOGGER.error(ex); }..
+W5b. catch (SomeException ex) { LOGGER.error("Error:" + ex.getMessage()); }..
 ```
 
 Correct way:
 
-[code lang=java]
-C5. catch (SomeException ex) { LOGGER.error("Read operation failed: id={}", idRecord, ex);}..`
+```java
+C5. catch (SomeException ex) { LOGGER.error("Read operation failed: id={}", idRecord, ex); }..`
 ```
 
 _General rules_:
 
+1. Do not remove the stack trace information by using getMessage() (see W5b) and not the complete exception. The stack trace often includes the real cause of the problem which is easily another exception raised by the underlying code. Logging only the message will prevent us to discover the real cause of the problem.
 
-
-
-    
-  1. Do not remove the stack trace information by using getMessage() (see W5b) and not the complete exception. The stack trace often includes the real cause of the problem which is easily another exception raised by the underlying code. Logging only the message will prevent us to discover the real cause of the problem.
-
-    
-  2. Do show significant (for the human which will analyze the log file) information in the logging message showing a text explaining what we wanted to perform while the exception was raised (not the exception kind or messages like "error": we know already something bad happened). What we need to know is what we were doing and on which data.
-
-
+2. Do show significant (for the human which will analyze the log file) information in the logging message showing a text explaining what we wanted to perform while the exception was raised (not the exception kind or messages like "error": we know already something bad happened). What we need to know is what we were doing and on which data.
 
 The C5 example tells we were trying to read the record with a specific ID whose value has been written in the log with the message.
 
@@ -308,8 +216,4 @@ Please note that C5 use one placeholder in the format string but there are two a
 
 Related FindBugs (SLF4J plugin) checks:
 
-
-    
-  * SLF4J_MANUALLY_PROVIDED_MESSAGE: the message should not be based on Exception getMessage()
-
-
+* SLF4J_MANUALLY_PROVIDED_MESSAGE: the message should not be based on Exception getMessage()

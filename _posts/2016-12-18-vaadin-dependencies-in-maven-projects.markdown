@@ -7,9 +7,7 @@ slug: vaadin-dependencies-in-maven-projects
 title: Vaadin 7 dependencies in Maven projects
 wordpress_id: 658
 categories:
-- Java
-- Maven
-- Vaadin
+- java
 tags:
 - atmosphere
 - coding
@@ -18,6 +16,7 @@ tags:
 - java
 - maven
 - plugin
+- vaadin
 - vaadin compiler
 ---
 
