@@ -24,6 +24,10 @@ I work and live close to Milan, Italy.
 [LinkedIn profile](http://www.linkedin.com/in/gualtierotesta)
 
 [Codewars](https://www.codewars.com/users/gualty) 
-![badge](https://www.codewars.com/users/gualty/badges/micro)
 
 [Book reviews on GoodReads](https://www.goodreads.com/review/list/26059740-gualtiero?order=d&sort=review&view=reviews)
+
+## Courses & Badges
+
+![Codewars badge](https://www.codewars.com/users/gualty/badges/micro)
+[Course: Principles of Reactive Architecture](https://www.youracclaim.com/badges/573d2d56-56df-4056-9d75-0bd439d7aacf/public_url)
