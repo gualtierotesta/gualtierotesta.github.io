@@ -29,6 +29,6 @@ I work and live close to Milan, Italy.
 
 ## Courses & Badges
 
-![Codewars badge](https://www.codewars.com/users/gualty/badges/micro)
+Codewars ![Codewars badge](https://www.codewars.com/users/gualty/badges/small)
 
 [Course: Principles of Reactive Architecture](https://www.youracclaim.com/badges/573d2d56-56df-4056-9d75-0bd439d7aacf/public_url)
