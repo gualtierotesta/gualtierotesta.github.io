@@ -11,7 +11,7 @@ I am a software analyst, architect and developer involved in web based applicati
 
 Test Driven Development (TDD) and software testing methodologies and techniques are my main interests, without forgetting about coding and code quality.
 
-I work and live close to Milan, Italy.
+I work and live close to Milan, Italy, Europe.
 
 ## My books
 

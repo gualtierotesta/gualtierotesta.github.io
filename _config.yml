@@ -1,4 +1,4 @@
-title:            Gualtiero Testa
+title:            Sharing Coding Experiences
 description:      My personal blog
 
 # put your disqus here
@@ -88,4 +88,4 @@ titlecase: true
 include: [".htaccess"]
 exclude: ["demo/*", "lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
 plugins: [jekyll-paginate]
-theme: neo-hpstr-jekyll-theme
+##theme: neo-hpstr-jekyll-theme
