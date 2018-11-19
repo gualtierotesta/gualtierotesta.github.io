@@ -32,5 +32,6 @@ I work and live close to Milan, Italy, Europe.
 Codewars ![Codewars badge](https://www.codewars.com/users/gualty/badges/small)
 
 [Course: Principles of Reactive Architecture](https://www.youracclaim.com/badges/573d2d56-56df-4056-9d75-0bd439d7aacf/public_url)
+
 [Course: Domain Driven Design](https://courses.cognitiveclass.ai/certificates/57d81b793964417b93d08f7366e2c6a9)
 
