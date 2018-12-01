@@ -16,10 +16,10 @@ tags:
 - web development
 ---
 
-[![Go Programming Blueprints - Solving Development Challenges with Golang](http://images.gr-assets.com/books/1442621930m/24880488.jpg)](http://www.goodreads.com/book/show/24880488)
-[Go Programming Blueprints - Solving Development Challenges with Golang](http://www.goodreads.com/book/show/24880488) by [Mat Ryer](http://www.goodreads.com/author/show/13479862)
+[![Go Programming Blueprints - Solving Development Challenges with Golang](https://images.gr-assets.com/books/1442621930m/24880488.jpg)](https://www.goodreads.com/book/show/24880488)
+[Go Programming Blueprints - Solving Development Challenges with Golang](https://www.goodreads.com/book/show/24880488) by [Mat Ryer](https://www.goodreads.com/author/show/13479862)
 
-My rating: [4 of 5 stars](http://www.goodreads.com/review/show/1964914459)
+My rating: [4 of 5 stars](https://www.goodreads.com/review/show/1964914459)
 
 # Real world solutions in GO
 
