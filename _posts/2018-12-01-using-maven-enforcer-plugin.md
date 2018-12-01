@@ -2,8 +2,8 @@
 author: gualtierotesta
 comments: true
 layout: post
-slug: checking-maven-dependencies-and-plugins-versions
-title: Checking Maven dependencies and plugins versions
+slug: using-maven-enforcer-plugin
+title: Enforcing the Maven version using the Maven Enforcer Plugin
 categories:
 - java
 tags:
@@ -17,7 +17,7 @@ tags:
 - maven-enforcer-plugin
 ---
 
-Enforce the Maven version using the Maven Enforcer Plugin
+
 
 The [Maven Enforcer Plugin](https://maven.apache.org/enforcer/maven-enforcer-plugin ) let us define and, if required, enforce some environment conditions like the:
 
