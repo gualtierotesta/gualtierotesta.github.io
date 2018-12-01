@@ -18,10 +18,10 @@ tags:
 - openstack
 ---
 
-[![Learning IBM Bluemix](http://images.gr-assets.com/books/1477708389m/32803163.jpg)](http://www.goodreads.com/book/show/32803163)
-[Learning IBM Bluemix](http://www.goodreads.com/book/show/32803163) by [Sreelatha Sankaranarayanan](http://www.goodreads.com/author/show/16026082)  
+[![Learning IBM Bluemix](https://images.gr-assets.com/books/1477708389m/32803163.jpg)](https://www.goodreads.com/book/show/32803163)
+[Learning IBM Bluemix](https://www.goodreads.com/book/show/32803163) by [Sreelatha Sankaranarayanan](https://www.goodreads.com/author/show/16026082)  
 
-My rating: [3 of 5 stars](http://www.goodreads.com/review/show/1874633804)
+My rating: [3 of 5 stars](https://www.goodreads.com/review/show/1874633804)
   
 # Interesting introduction to the Bluemix world
 
@@ -29,7 +29,7 @@ This book is a showcase, with working examples, of what we can do with IBM Bluem
 
 The main focus is to show what can be done, not how it works. Most of the technical backgrounds are left to several links to external resources on the web.  
 
-First step is how to create an application using Bluemix templates ("boilerplates").   
+First step is how to create an application using Bluemix templates ("boilerplates").
 
 The following chapters are on how to integrate the application to the available services like security, SQL and NoSQL databases and IBM Watson functions, how to use the Bluemix development environment (git repository, continuous integration and deployment, test..) and how to monitor and tune application performances.  
 
