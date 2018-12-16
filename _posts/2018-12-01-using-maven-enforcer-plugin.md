@@ -17,7 +17,7 @@ tags:
 - maven-enforcer-plugin
 ---
 
-
+*Last update: 16 Dec 2018*
 
 The [Maven Enforcer Plugin](https://maven.apache.org/enforcer/maven-enforcer-plugin ) let us define and, if required, enforce some environment conditions like the:
 
@@ -74,12 +74,29 @@ How to enforce the Maven release ? By using the  Maven Enforcer Plugin adding th
 </build>
 ```
 
-The Maven release can be specified as:
+In this example, the `requireMavenVersion` **rule** has been specified. Withinh this rule, the Maven release can be specified as:
 
 `<version>3.6.0</version>` : only version 3.6.0 can be used
 
 `<version>[3.5.4,)</version>` : minimum accepted version is 3.5.4; 3.5.4 and 3.6.0 are ok, 3.5.1 not ok
 
 `<version>3.5</version>` : accepted versions are any 3.5.x
+
+Another interesting rule is the `requirePluginVersions` which can help us to check a common Maven best practice: Maven plugins version should be explicitly defined in the pom.xml, to prevent build results variation when a different Maven tool release is used.
+
+An example of the `requirePluginVersions` rule is the following:
+
+``` xml
+<requirePluginVersions>
+    <message>Best Practice is to always define plugin versions!</message>
+    <banLatest>true</banLatest>
+    <banSnapshots>true</banSnapshots>
+    <phases>[ERROR] clean,deploy,site</phases>
+</requirePluginVersions>
+```
+
+which forces the best practice to always define the version of the Maven plugins used in the project. The build will fail if plugins version is not explicity defined or it is a snapshot (`banSnapshots` tag) or "latest" (`banLatest` tag) version.
+
+See [here](https://maven.apache.org/enforcer/enforcer-rules/requirePluginVersions.html) for all details about this rule configuration.
 
 More usages can be found on the [plugin site](https://maven.apache.org/enforcer/maven-enforcer-plugin/usage.html).
