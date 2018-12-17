@@ -35,3 +35,6 @@ Codewars ![Codewars badge](https://www.codewars.com/users/gualty/badges/small)
 
 [Course: Domain Driven Design](https://courses.cognitiveclass.ai/certificates/57d81b793964417b93d08f7366e2c6a9)
 
+[Course: Reactive Microservices](https://courses.cognitiveclass.ai/certificates/43b85d6c932048fb88c2b6fa137eaedc)
+
+
