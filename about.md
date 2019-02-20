@@ -37,4 +37,5 @@ Codewars ![Codewars badge](https://www.codewars.com/users/gualty/badges/small)
 
 [Course: Reactive Microservices](https://courses.cognitiveclass.ai/certificates/43b85d6c932048fb88c2b6fa137eaedc)
 
+[Course: M001 MongoDB Basics](http://university.mongodb.com/course_completion/b3dc3723-72ab-4a10-8596-b2ef43b8)
 
