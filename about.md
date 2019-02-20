@@ -15,6 +15,8 @@ I work and live close to Milan, Italy, Europe.
 
 ## My books
 
+[JavaScript : Guía completa (2019, Marcombo, ISBN 978-8426726940)](https://www.marcombo.com/javascript-guia-completa-9788426726940/) written with [Alessandra Salvaggio](https://it.linkedin.com/in/alessandrasalvaggio) in *Spanish*, it is a primer on modern JavaScript/ECMAScript for web sites development
+
 [JavaScript (2018, Edizioni LSWR, ISBN 978-8868956318)](http://www.edizionilswr.it/libri/javascript/) written with [Alessandra Salvaggio](https://it.linkedin.com/in/alessandrasalvaggio) in *Italian*, it is a primer on modern JavaScript/ECMAScript for web sites development
 
 [Flash CS3 e Actionscript 3 (2008, Edizioni FAG, ISBN 978-8882336905) ](http://www.fag.it/libro_programmare_con_flash_cs3_e_actionscript_3_21798.aspx) written with [Alessandra Salvaggio](https://it.linkedin.com/in/alessandrasalvaggio) in *Italian*, it is a primer on Adobe Flash and Actionscript programming for web sites development.
