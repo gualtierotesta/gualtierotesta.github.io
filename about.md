@@ -41,3 +41,4 @@ Codewars ![Codewars badge](https://www.codewars.com/users/gualty/badges/small)
 
 [Course: M001 MongoDB Basics](http://university.mongodb.com/course_completion/b3dc3723-72ab-4a10-8596-b2ef43b8)
 
+[Course: M220J MongoDB for Java Developers](http://university.mongodb.com/course_completion/ed58c4c5-e86b-4611-8a2d-ed2d424e)
