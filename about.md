@@ -45,3 +45,4 @@ Codewars ![Codewars badge](https://www.codewars.com/users/gualty/badges/small)
 
 [Course: Mastering Systemd at Linux Academy](https://linuxacademy.com/profile/u/cert/id/284323)
 
+[Course: Helm Deep Dive at Linux Academy](https://linuxacademy.com/profile/u/cert/id/286469)
