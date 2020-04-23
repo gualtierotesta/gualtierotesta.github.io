@@ -48,3 +48,6 @@ Codewars ![Codewars badge](https://www.codewars.com/users/gualty/badges/small)
 [Course: Helm Deep Dive at Linux Academy](https://linuxacademy.com/profile/u/cert/id/286469)
 
 [Course: Implementing a Full CI/CD Pipeline at Linux Academy](https://linuxacademy.com/profile/u/cert/id/286875)
+
+[Course: Data Structures in Java at JavaSpecialists.eu (Dr. Heinz Kabutz)](https://javaspecialists.teachable.com/p/data-structures)
+
